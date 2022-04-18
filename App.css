@@ -1,0 +1,11 @@
+.navbar-nav a {
+  font-size: larger;
+}
+.NewArrivals {
+  position: relative;
+
+  border: 2px solid;
+  z-index: 00000;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
