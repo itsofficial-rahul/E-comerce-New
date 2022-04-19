@@ -1,8 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { cartDataDelete, OrderDataACtion } from "./redux/action.js";
 
-function Razor({ price, item }) {
+function Razor({ price, item, add }) {
+  const navigate = useNavigate();
+  console.log(price, item, add);
   const dispatch = useDispatch();
   const loadScript = (src) => {
     return new Promise((resolve) => {
@@ -18,7 +21,7 @@ function Razor({ price, item }) {
     });
   };
 
-  const displayRazorpay = async (amount, item) => {
+  const displayRazorpay = async (price, item) => {
     const res = await loadScript("http://checkout.razorpay.com/v1/checkout.js");
     if (!res) {
       alert("offfline");
@@ -27,13 +30,14 @@ function Razor({ price, item }) {
     const options = {
       key: "rzp_test_92xnvmwoK4k2CT",
       currency: "INR",
-      amount: amount * 100,
+      amount: price * 100,
       name: "rahul",
       handler: function (response) {
         if (response) {
           console.log(response);
           dispatch(cartDataDelete(item));
-          dispatch(OrderDataACtion(item));
+          dispatch(OrderDataACtion(item, add));
+          navigate("/oders");
         }
       },
     };

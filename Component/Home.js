@@ -1,4 +1,7 @@
 import React from "react";
+import Demo from "../AddForm";
+import UserForm from "../AddForm";
+import AddForm from "../AddForm";
 
 import { Slider } from "../Slider";
 

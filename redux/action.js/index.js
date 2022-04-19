@@ -18,10 +18,19 @@ export const cartDataDelete = (item) => {
   };
 };
 
-export const OrderDataACtion = (item, addresses) => {
-  const data = { ...item, ...addresses };
+export const OrderDataACtion = (item, add) => {
+  console.log("action me daat", add);
+  const data = { ...item, ...add };
   return {
     type: "ORDERDATA",
     payload: data,
+  };
+};
+
+export const BuyProduct = (Buyproduct) => {
+  console.log("this is buy product", Buyproduct);
+  return {
+    type: "BUYPPODUCT",
+    payload: Buyproduct,
   };
 };

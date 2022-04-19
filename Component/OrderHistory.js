@@ -9,17 +9,8 @@ export default function OrderHistory() {
     <div>
       <Navbar></Navbar>
       {state.map((item) => {
-        const {
-          title,
-          qty,
-          image,
-          price,
-          time,
-          shipping_name,
-          shipping_address_city,
-          shipping_address_line1,
-          shipping_address_zip,
-        } = item;
+        const { title, qty, image, price, time, name, city, address, pin } =
+          item;
         return (
           <>
             <div className=" d-flex justify-content-center mb-3 mt-3  pb-1 ">
@@ -32,10 +23,10 @@ export default function OrderHistory() {
                   {qty}X{price}=₹ {qty * price}
                 </p>
                 Purchasing date <h6>{time}</h6>
-                <h5 className="lead">Name : {shipping_name} </h5>
-                <h5 className="lead">City : {shipping_address_city} </h5>
-                <h5 className="lead">Address :{shipping_address_line1} </h5>
-                <h5 className="lead">ZIP CODE : {shipping_address_zip} </h5>
+                <h5 className="lead">Name : {name} </h5>
+                <h5 className="lead">City : {city} </h5>
+                <h5 className="lead">Address :{address} </h5>
+                <h5 className="lead">ZIP CODE : {pin} </h5>
                 <h6 className="lead">Your Item is on the way</h6>
               </div>
               <hr className="mt-3"></hr>

@@ -11,6 +11,7 @@ import Login from "./Login";
 import ProtectedRoute from "./ProtectedRoute";
 import Signup from "./Signup";
 import { UserAuthContextProvider } from "./UserAuthContext";
+import UserForm from "./AddForm";
 
 function App() {
   return (
@@ -62,6 +63,15 @@ function App() {
             element={
               <ProtectedRoute>
                 <OrderHistory></OrderHistory>
+              </ProtectedRoute>
+            }
+          ></Route>
+          <Route
+            exact
+            path="/Adressform"
+            element={
+              <ProtectedRoute>
+                <UserForm></UserForm>
               </ProtectedRoute>
             }
           ></Route>

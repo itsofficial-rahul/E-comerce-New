@@ -57,3 +57,19 @@ export const orderdataReducer = (state = initialState, action) => {
       return state;
   }
 };
+const buyPrdoctDetail = [];
+export const productBuy = (state = buyPrdoctDetail, action) => {
+  switch (action.type) {
+    case "BUYPPODUCT":
+      return {
+        ...state,
+        buyPrdoctDetail: action.payload,
+      };
+
+      break;
+
+    default:
+      return state;
+      break;
+  }
+};
